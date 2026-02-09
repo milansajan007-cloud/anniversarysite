@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wedding Anniversary</title>
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background:#fff5f7;
+  margin:0;
+  padding:15px;
+}
+.page{display:none;}
+.page.active{display:block;}
+h2{text-align:center;color:#b0003a;}
+
+.question{
+  background:#fff;
+  padding:12px;
+  margin:10px 0;
+  border-radius:12px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.15);
+}
+
+.option{
+  display:block;
+  margin:6px 0;
+  cursor:pointer;
+  font-size:16px;
+}
+.option span{margin-right:6px;}
+
+button{
+  display:block;
+  margin:25px auto;
+  padding:12px 30px;
+  font-size:18px;
+  border:none;
+  border-radius:25px;
+  background:#28a745;
+  color:white;
+  cursor:pointer;
+}
+
+/* Percentage page */
+.meter{
+  max-width:400px;
+  margin:40px auto;
+  background:#fff;
+  padding:20px;
+  border-radius:15px;
+  text-align:center;
+}
+.bar{
+  width:100%;
+  height:20px;
+  background:#ddd;
+  border-radius:10px;
+  overflow:hidden;
+}
+.fill{
+  height:100%;
+  width:0%;
+  background:#ff4d6d;
+  transition:1s;
+}
+.percent{
+  font-size:26px;
+  margin-top:10px;
+  color:#b0003a;
+}
+
+/* Images */
+.images img{
+  width:100%;
+  max-width:350px;
+  display:block;
+  margin:15px auto;
+  border-radius:15px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Final page */
+.final{text-align:center;margin-top:40px;}
+.heart{
+  font-size:90px;
+  animation:beat 1s infinite;
+}
+@keyframes beat{
+  0%,100%{transform:scale(1);}
+  50%{transform:scale(1.3);}
+}
+.message{
+  max-width:800px;
+  margin:auto;
+  font-size:18px;
+  line-height:1.6;
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 : QUESTIONS -->
+<div class="page active" id="page1">
+<h2>💍 Anniversary Questions 💍</h2>
+
+<div class="question">
+1. വിവാഹദിവസം ഇന്നും വ്യക്തമായി ഓർമ്മയുണ്ടോ? ✨
+<label class="option" onclick="tick(this)"><span>☐</span> അതെ</label>
+<label class="option" onclick="tick(this)"><span>☐</span> അല്പം</label>
+<label class="option" onclick="tick(this)"><span>☐</span> album കണ്ടാൽ മാത്രം 😄</label>
+</div>
+
+<div class="question">
+2. ആ ദിവസം അല്പം പേടിയുണ്ടായിരുന്നോ? 😅
+<label class="option" onclick="tick(this)"><span>☐</span> അതെ</label>
+<label class="option" onclick="tick(this)"><span>☐</span> അല്പം</label>
+<label class="option" onclick="tick(this)"><span>☐</span> ആരോടും പറഞ്ഞില്ല 😆</label>
+</div>
+
+<div class="question">
+3. 23 വർഷങ്ങൾ വേഗത്തിൽ കടന്നുപോയെന്ന് തോന്നുന്നുണ്ടോ? ⏰
+<label class="option" onclick="tick(this)"><span>☐</span> അതെ</label>
+<label class="option" onclick="tick(this)"><span>☐</span> ഇല്ലാ</label>
+<label class="option" onclick="tick(this)"><span>☐</span> calendar പറഞ്ഞു</label>
+</div>
+
+<div class="question">
+4. നിങ്ങളുടെ പങ്കാളിയുടെ ഏറ്റവും നല്ല സ്വഭാവം? 🌸
+<label class="option" onclick="tick(this)"><span>☐</span> കരുണ</label>
+<label class="option" onclick="tick(this)"><span>☐</span> നിഷ്കളങ്കത</label>
+<label class="option" onclick="tick(this)"><span>☐</span> എന്നെ സഹിക്കുന്നത് 😆</label>
+</div>
+
+<div class="question">
+5. ജീവിതം വീണ്ടും തുടങ്ങേണ്ടി വന്നാൽ ഇതേ ആളെ തന്നെ തിരഞ്ഞെടുക്കുമോ? 💖
+<label class="option" onclick="tick(this)"><span>☐</span> അതെ, കണ്ണടച്ച്</label>
+<label class="option" onclick="tick(this)"><span>☐</span> ഒന്നൂടെ ആലോചിക്കണം 😆</label>
+</div>
+
+<div class="question">
+6. കഷ്ടകാലങ്ങൾ നിങ്ങളെ കൂടുതൽ അടുത്താക്കിയോ? 🤝
+<label class="option" onclick="tick(this)"><span>☐</span> അതെ, തീർച്ചയായും</label>
+<label class="option" onclick="tick(this)"><span>☐</span> ഇല്ല</label>
+</div>
+
+<div class="question">
+7. Micah & Manna കാരണം ജീവിതം കൂടുതൽ അർത്ഥവത്തായോ? 🌸
+<label class="option" onclick="tick(this)"><span>☐</span> അതെ</label>
+<label class="option" onclick="tick(this)"><span>☐</span> ഇല്ലാ</label>
+</div>
+
+<div class="question">
+8. ഇന്നും പരസ്പരം മിസ് ചെയ്യുന്ന നിമിഷങ്ങളുണ്ടോ? 🥹
+<label class="option" onclick="tick(this)"><span>☐</span> ഉണ്ട്</label>
+<label class="option" onclick="tick(this)"><span>☐</span> ഇല്ല</label>
+</div>
+
+<div class="question">
+9. മാതാപിതാക്കളായി ഏറ്റവും അഭിമാനം തോന്നിയ ഒരു ഓർമ്മയുണ്ടോ? 🥹🌸
+<label class="option" onclick="tick(this)"><span>☐</span> ഉണ്ട്</label>
+<label class="option" onclick="tick(this)"><span>☐</span> ഇല്ല</label>
+</div>
+
+<div class="question">
+10. ഇനി വരാനിരിക്കുന്ന വർഷങ്ങൾ ഒരുമിച്ച് സന്തോഷത്തോടെ പോകുമെന്ന് വിശ്വസിക്കുന്നുണ്ടോ? 🤍
+<label class="option" onclick="tick(this)"><span>☐</span> അതെ</label>
+<label class="option" onclick="tick(this)"><span>☐</span> ഇല്ല</label>
+</div>
+
+<button onclick="calculateLove()">Submit ❤️</button>
+</div>
+
+<!-- PAGE 2 : PERCENTAGE -->
+<div class="page" id="page2">
+<div class="meter">
+<h2>💞 Love Percentage 💞</h2>
+<div class="bar"><div class="fill" id="fill"></div></div>
+<div class="percent" id="percent">0%</div>
+<button onclick="nextPage(3)">Next ⏩</button>
+</div>
+</div>
+
+<!-- PAGE 3 : IMAGES + AUTO MUSIC -->
+<div class="page" id="page3">
+<h2>📸 Beautiful Memories 🎶</h2>
+
+<audio id="song" loop>
+  <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<div class="images">
+<img src="img1.jpg">
+<img src="img2.jpg">
+<img src="img3.jpg">
+</div>
+
+<button onclick="nextPage(4)">Next ❤️</button>
+</div>
+
+<!-- PAGE 4 : FINAL -->
+<div class="page" id="page4">
+<div class="final">
+<h1>HAPPY WEDDING ANNIVERSARY</h1>
+
+<p class="message">
+Happy Anniversary to my dear Pappa and Mummy 💖<br><br>
+Watching your journey together has taught us what true love,
+understanding, and commitment truly mean.<br><br>
+You are our strongest example of patience, partnership,
+and family values.<br><br>
+May your bond grow stronger with every passing year 🤍
+</p>
+
+<div class="heart">❤️</div>
+</div>
+</div>
+
+<script>
+function tick(el){
+  const span = el.querySelector("span");
+  const all = el.parentElement.querySelectorAll(".option span");
+  if(span.innerText==="✅"){ span.innerText="☐"; return; }
+  all.forEach(s=>s.innerText="☐");
+  span.innerText="✅";
+}
+
+function calculateLove(){
+  const q=document.querySelectorAll(".question");
+  let count=0;
+  q.forEach(x=>{ if(x.innerHTML.includes("✅")) count++; });
+  let percent=Math.round((count/10)*100);
+  document.getElementById("fill").style.width=percent+"%";
+  document.getElementById("percent").innerText=percent+"%";
+  nextPage(2);
+}
+
+function nextPage(n){
+  document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
+  document.getElementById("page"+n).classList.add("active");
+
+  if(n===3){
+    document.getElementById("song").play();
+  }
+}
+</script>
+
+</body>
+</html>
